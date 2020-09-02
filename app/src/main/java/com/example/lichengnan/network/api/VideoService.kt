@@ -19,7 +19,7 @@ package com.example.lichengnan.network.api
 import com.eyepetizer.android.logic.model.VideoBeanForClient
 import com.eyepetizer.android.logic.model.VideoRelated
 import com.eyepetizer.android.logic.model.VideoReplies
-import com.eyepetizer.android.logic.network.ServiceCreator
+import com.example.lichengnan.network.ServiceCreator
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

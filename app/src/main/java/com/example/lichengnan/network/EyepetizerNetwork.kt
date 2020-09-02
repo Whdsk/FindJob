@@ -16,7 +16,8 @@
 
 package com.eyepetizer.android.logic.network
 
-import com.eyepetizer.android.logic.network.api.MainPageService
+import com.example.lichengnan.network.ServiceCreator
+import com.example.lichengnan.network.api.MainPageService
 import com.example.lichengnan.network.api.VideoService
 import retrofit2.Call
 import retrofit2.Callback

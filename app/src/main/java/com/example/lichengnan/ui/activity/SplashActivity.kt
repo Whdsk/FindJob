@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.lichengnan.ui
+package com.example.lichengnan.ui.activity
 
 import android.Manifest
 import android.os.Bundle
@@ -22,8 +22,8 @@ import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 import com.example.lichengnan.*
-import com.example.lichengnan.WebViewActivity.Companion.start
 import com.example.lichengnan.extension.edit
+import com.example.lichengnan.extension.sharedPreferences
 import com.permissionx.guolindev.PermissionX
 import kotlinx.android.synthetic.main.activity_splash.*
 import kotlinx.coroutines.CoroutineScope
@@ -74,7 +74,7 @@ class SplashActivity : BaseActivity() {
         ivSplashPicture.startAnimation(scaleAnimation)
         CoroutineScope(job).launch {
             delay(splashDuration)
-            MainActivity.start(this@SplashActivity)
+            IndexActivity.start(this@SplashActivity)
             finish()
         }
         isFirstEntryApp = false
@@ -82,6 +82,7 @@ class SplashActivity : BaseActivity() {
 
     private fun requestWriteExternalStoragePermission() {
         PermissionX.init(this@SplashActivity).permissions(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                //Lamda表达式
             .onExplainRequestReason { scope, deniedList ->
                 val message = GlobalUtil.getString(R.string.request_permission_picture_processing)
                 scope.showRequestReasonDialog(deniedList, message, GlobalUtil.getString(R.string.ok), GlobalUtil.getString(R.string.cancel))
@@ -91,7 +92,8 @@ class SplashActivity : BaseActivity() {
                 scope.showForwardToSettingsDialog(deniedList, message, GlobalUtil.getString(R.string.settings), GlobalUtil.getString(R.string.cancel))
             }
             .request { allGranted, grantedList, deniedList ->
-                requestReadPhoneStatePermission()
+                //requestReadPhoneStatePermission()
+                setContentView(R.layout.activity_splash)
             }
     }
 
@@ -106,7 +108,7 @@ class SplashActivity : BaseActivity() {
                 scope.showForwardToSettingsDialog(deniedList, message, GlobalUtil.getString(R.string.settings), GlobalUtil.getString(R.string.cancel))
             }
             .request { allGranted, grantedList, deniedList ->
-                setContentView(R.layout.activity_splash)
+
             }
     }
 

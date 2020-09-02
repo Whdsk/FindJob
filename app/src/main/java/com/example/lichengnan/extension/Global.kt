@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package com.example.lichengnan
+package com.example.lichengnan.extension
 
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lichengnan.GlobalUtil
 import com.example.lichengnan.application.EyepetizerApplication
 import com.example.lichengnan.ui.ShareDialogFragment
 import com.example.lichengnan.util.ShareUtil

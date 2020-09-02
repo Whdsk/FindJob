@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package com.eyepetizer.android.logic.network.api
+package com.example.lichengnan.network.api
 
+import com.example.lichengnan.logic.model.Follow
 import com.eyepetizer.android.logic.model.*
-import com.eyepetizer.android.logic.network.ServiceCreator
+import com.example.lichengnan.network.ServiceCreator
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Url

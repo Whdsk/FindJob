@@ -25,8 +25,8 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import android.provider.Settings
 import android.text.TextUtils
-import androidx.core.content.edit
 import com.example.lichengnan.application.EyepetizerApplication
+import com.example.lichengnan.extension.sharedPreferences
 import com.example.lichengnan.util.logW
 import java.util.*
 

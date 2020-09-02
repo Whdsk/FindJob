@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.eyepetizer.android.logic.network
+package com.example.lichengnan.network
 
 import android.os.Build
-import com.eyepetizer.android.extension.logV
-import com.eyepetizer.android.extension.screenPixel
-import com.eyepetizer.android.ui.common.callback.GsonTypeAdapterFactory
-import com.eyepetizer.android.util.GlobalUtil
+import com.example.lichengnan.GlobalUtil
+import com.example.lichengnan.extension.screenPixel
+import com.example.lichengnan.factory.GsonTypeAdapterFactory
+import com.example.lichengnan.util.logV
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -30,6 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.io.IOException
 import java.util.*
+import kotlin.jvm.Throws
 
 
 /**

@@ -32,7 +32,7 @@ import com.example.lichengnan.constant.Const
 import com.example.lichengnan.extension.dp2px
 import com.example.lichengnan.extension.edit
 import com.example.lichengnan.extension.screenWidth
-import com.example.lichengnan.sharedPreferences
+import com.example.lichengnan.extension.sharedPreferences
 import com.umeng.analytics.MobclickAgent
 import java.util.concurrent.TimeUnit
 

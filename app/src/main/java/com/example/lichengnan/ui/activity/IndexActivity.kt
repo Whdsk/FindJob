@@ -1,4 +1,4 @@
-package com.example.lichengnan
+package com.example.lichengnan.ui.activity
 
 import android.content.Context
 import android.content.Intent
@@ -7,9 +7,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lichengnan.ItemListDto
+import com.example.lichengnan.ListAdapter
+import com.example.lichengnan.R
 import java.util.ArrayList
 
-class MainActivity : AppCompatActivity() {
+class IndexActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var listDto: MutableList<ItemListDto>
     val listAdapter by lazy { ListAdapter() }
@@ -26,13 +29,16 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         //listAdapter.setOnItemClickListener(adapter, view, position) ->{})
         listAdapter.setOnItemClickListener { adapter, view, position ->
-            Toast.makeText(this@MainActivity,"dddd",Toast.LENGTH_LONG).show()
+            Toast.makeText(this@IndexActivity,"dddd",Toast.LENGTH_LONG).show()
+            if(position==0){
+                KaiyuanActivity.start(this@IndexActivity)
+            }
         }
     }
     companion object {
 
         fun start(context: Context) {
-            context.startActivity(Intent(context, MainActivity::class.java))
+            context.startActivity(Intent(context, IndexActivity::class.java))
         }
     }
 }

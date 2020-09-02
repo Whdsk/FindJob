@@ -16,6 +16,8 @@
 
 package com.eyepetizer.android.logic.model
 
+import com.example.lichengnan.logic.model.Label
+
 /**
  * 社区-推荐列表，响应实体类。
  *
@@ -123,20 +125,20 @@ data class CommunityRecommend(val itemList: List<Item>, val count: Int, val tota
     )
 
     data class DataXX(
-        val actionUrl: String?,
-        val adTrack: List<Any>,
-        val autoPlay: Boolean,
-        val bgPicture: String,
-        val dataType: String,
-        val description: String,
-        val header: HeaderX?,
-        val id: Int,
-        val image: String,
-        val label: Label?,
-        val labelList: List<Any>,
-        val shade: Boolean,
-        val subTitle: String,
-        val title: String
+            val actionUrl: String?,
+            val adTrack: List<Any>,
+            val autoPlay: Boolean,
+            val bgPicture: String,
+            val dataType: String,
+            val description: String,
+            val header: HeaderX?,
+            val id: Int,
+            val image: String,
+            val label: Label?,
+            val labelList: List<Any>,
+            val shade: Boolean,
+            val subTitle: String,
+            val title: String
     )
 
     data class HeaderX(

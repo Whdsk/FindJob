@@ -24,7 +24,7 @@ import com.example.lichengnan.BuildConfig
 import com.example.lichengnan.R
 import com.example.lichengnan.WebViewActivity
 import com.example.lichengnan.extension.preCreateSession
-import com.example.lichengnan.ui.SplashActivity
+import com.example.lichengnan.ui.activity.SplashActivity
 import com.example.lichengnan.util.DialogAppraiseTipsWorker
 import com.eyepetizer.android.logic.network.NoStatusFooter
 import com.scwang.smart.refresh.header.MaterialHeader

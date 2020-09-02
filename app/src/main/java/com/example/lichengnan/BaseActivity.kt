@@ -174,6 +174,6 @@ open class BaseActivity : AppCompatActivity() {
      * @param shareContent 分享内容
      */
     protected fun showDialogShare(shareContent: String) {
-        showDialogShare(this, shareContent)
+        com.example.lichengnan.extension.showDialogShare(this, shareContent)
     }
 }

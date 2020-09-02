@@ -16,6 +16,9 @@
 
 package com.eyepetizer.android.logic.model
 
+import com.example.lichengnan.logic.model.Content
+import com.example.lichengnan.logic.model.Label
+
 /**
  * 首页-日报列表，响应实体类。
  *
@@ -27,21 +30,21 @@ data class Daily(val itemList: List<Item>, val count: Int, val total: Int, val n
     data class Item(val `data`: Data, val type: String, val tag: Any?, val id: Int = 0, val adIndex: Int)
 
     data class Data(
-        val actionUrl: String?,
-        val adTrack: Any,
-        val backgroundImage: String,
-        val content: Content,
-        val dataType: String,
-        val follow: Author.Follow?,
-        val header: Header,
-        val id: Int,
-        val rightText: String,
-        val subTitle: Any,
-        val text: String,
-        val titleList: List<String>,
-        val type: String,
-        val image: String,
-        val label: Label?
+            val actionUrl: String?,
+            val adTrack: Any,
+            val backgroundImage: String,
+            val content: Content,
+            val dataType: String,
+            val follow: Author.Follow?,
+            val header: Header,
+            val id: Int,
+            val rightText: String,
+            val subTitle: Any,
+            val text: String,
+            val titleList: List<String>,
+            val type: String,
+            val image: String,
+            val label: Label?
     )
 
     data class Header(
