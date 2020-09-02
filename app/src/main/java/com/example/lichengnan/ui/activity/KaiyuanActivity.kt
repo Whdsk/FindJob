@@ -5,18 +5,26 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.Observer
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import com.example.lichengnan.BaseActivity
 import com.example.lichengnan.GlobalUtil
 import com.example.lichengnan.R
 import com.example.lichengnan.event.MessageEvent
+import com.example.lichengnan.event.RefreshEvent
 import com.example.lichengnan.event.SwitchPagesEvent
 import com.example.lichengnan.extension.setOnClickListener
+import com.example.lichengnan.extension.showToast
+import com.example.lichengnan.ui.NotificationFragment
 import com.example.lichengnan.ui.activity.comminute.CommunityFragment
+import com.example.lichengnan.ui.activity.login.LoginActivity
+import com.example.lichengnan.ui.distory.home.HomeFrgment
 import com.example.lichengnan.ui.distory.home.HomePageFragment
 import com.example.lichengnan.util.DialogAppraiseTipsWorker
 import com.example.lichengnan.util.logD
+import com.eyepetizer.android.ui.mine.MineFragment
+import kotlinx.android.synthetic.main.layout_bottom_navigation_bar.*
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -40,7 +48,7 @@ class KaiyuanActivity: BaseActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_kaiyuanmain)
     }
 
     override fun setupViews() {
@@ -60,7 +68,7 @@ class KaiyuanActivity: BaseActivity()  {
                     setTabSelection(2)
                 }
                 ivRelease -> {
-                    LoginActivity.start(this@MainActivity)
+                    LoginActivity.start(this@KaiyuanActivity)
                 }
                 btnMine -> {
                     notificationUiRefresh(3)
@@ -74,7 +82,7 @@ class KaiyuanActivity: BaseActivity()  {
     override fun onMessageEvent(messageEvent: MessageEvent) {
         super.onMessageEvent(messageEvent)
         when {
-            messageEvent is SwitchPagesEvent && CommendFragment::class.java == messageEvent.activityClass -> {
+            messageEvent is SwitchPagesEvent && HomeFrgment::class.java == messageEvent.activityClass -> {
                 btnCommunity.performClick()
             }
             else -> {
