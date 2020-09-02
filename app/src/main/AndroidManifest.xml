@@ -41,6 +41,7 @@
 
         <activity android:name=".WebViewActivity" />
         <activity android:name=".ui.activity.KaiyuanActivity" />
+        <activity android:name="com.eyepetizer.android.ui.setting.AboutActivity" />
     </application>
 
 </manifest>
