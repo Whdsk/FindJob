@@ -1,0 +1,43 @@
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+# Windows thumbnail db
+Thumbs.db
+# Mac .DS_Store files
+.DS_Store
+
+# Local configuration files (sdk path, etc)
+local.properties
+tests/local.properties
+lint.xml
+
+# Proguard README
+proguardMapping.txt 每个发布版本的混淆映射文件需要保存
+proguard-project.txt
+tests/proguard-project.txt
+
+# Android Studio and Gradle specific entries
+.gradle
+.idea
+*.iml
+build/
+.navigation
+captures/
+output.json
+
+# NDK
+obj/
+.externalNativeBuild
+mapping.txt
+seeds.txt
