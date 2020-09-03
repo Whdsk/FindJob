@@ -6,10 +6,9 @@
     android:layout_height="53dp"
     android:paddingStart="@dimen/listSpaceSize"
     android:paddingEnd="@dimen/listSpaceSize"
-    tools:context=".ui.home.discovery.DiscoveryFragment"
     tools:visibility="visible">
 
-    <com.eyepetizer.android.ui.common.view.TypefaceTextView
+     <com.example.lichengnan.TypefaceTextView
         android:id="@+id/tvTitle8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +17,7 @@
         app:typeface="fzdb1Typeface"
         tools:text="本周榜单" />
 
-    <com.eyepetizer.android.ui.common.view.TypefaceTextView
+    <com.example.lichengnan.TypefaceTextView
         android:id="@+id/tvRightText8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

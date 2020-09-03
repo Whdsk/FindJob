@@ -45,7 +45,7 @@ import com.shuyu.gsyvideoplayer.video.base.GSYVideoPlayer
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 import org.greenrobot.eventbus.EventBus
 
-class HomeAdapter(val fragment: HomeFrgment, val dataList: List<HomePageRecommend.Item>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class HomeAdapter(val fragment: HomeFragment, val dataList: List<HomePageRecommend.Item>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemCount() = dataList.size
 

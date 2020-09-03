@@ -19,7 +19,7 @@ import com.example.lichengnan.extension.showToast
 import com.example.lichengnan.ui.NotificationFragment
 import com.example.lichengnan.ui.activity.comminute.CommunityFragment
 import com.example.lichengnan.ui.activity.login.LoginActivity
-import com.example.lichengnan.ui.distory.home.HomeFrgment
+import com.example.lichengnan.ui.distory.home.HomeFragment
 import com.example.lichengnan.ui.distory.home.HomePageFragment
 import com.example.lichengnan.util.DialogAppraiseTipsWorker
 import com.example.lichengnan.util.logD
@@ -82,7 +82,7 @@ class KaiyuanActivity: BaseActivity()  {
     override fun onMessageEvent(messageEvent: MessageEvent) {
         super.onMessageEvent(messageEvent)
         when {
-            messageEvent is SwitchPagesEvent && HomeFrgment::class.java == messageEvent.activityClass -> {
+            messageEvent is SwitchPagesEvent && HomeFragment::class.java == messageEvent.activityClass -> {
                 btnCommunity.performClick()
             }
             else -> {

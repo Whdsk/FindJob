@@ -31,10 +31,9 @@ import com.example.lichengnan.extension.showToast
 import com.example.lichengnan.ui.activity.BaseFragment
 import com.example.lichengnan.ui.activity.login.LoginActivity
 import com.eyepetizer.android.ui.setting.AboutActivity
-import com.eyepetizer.android.ui.setting.SettingActivity
+import com.example.lichengnan.ui.setting.SettingActivity
 import com.umeng.analytics.MobclickAgent
 import kotlinx.android.synthetic.main.fragment_mine.*
-import kotlinx.android.synthetic.main.item_list.view.*
 
 /**
  * 我的界面。

@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-package com.eyepetizer.android.ui.setting
+package com.example.lichengnan.ui.setting
 
 import android.content.Context
 import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bumptech.glide.Glide
-import com.eyepetizer.android.Const
-import com.eyepetizer.android.R
-import com.eyepetizer.android.extension.edit
-import com.eyepetizer.android.extension.sharedPreferences
-import com.eyepetizer.android.extension.showToast
-import com.eyepetizer.android.ui.common.ui.WebViewActivity
-import com.eyepetizer.android.ui.common.ui.WebViewActivity.Companion.MODE_SONIC_WITH_OFFLINE_CACHE
-import com.eyepetizer.android.ui.login.LoginActivity
+import com.example.lichengnan.R
+import com.example.lichengnan.WebViewActivity
+import com.example.lichengnan.WebViewActivity.Companion.MODE_SONIC_WITH_OFFLINE_CACHE
+import com.example.lichengnan.constant.Const
+import com.example.lichengnan.extension.edit
+import com.example.lichengnan.extension.sharedPreferences
+import com.example.lichengnan.extension.showToast
+import com.example.lichengnan.ui.activity.login.LoginActivity
+import com.eyepetizer.android.ui.setting.AboutActivity
 import com.shuyu.gsyvideoplayer.GSYVideoManager
 import com.tencent.sonic.sdk.SonicEngine
 import com.umeng.analytics.MobclickAgent

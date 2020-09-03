@@ -16,7 +16,6 @@
 
 package com.example.lichengnan.ui.distory.communite
 
-import android.app.Activity
 import android.graphics.Rect
 import android.view.LayoutInflater
 import android.view.View
@@ -31,28 +30,18 @@ import com.example.lichengnan.BuildConfig
 import com.example.lichengnan.GlobalUtil
 import com.example.lichengnan.R
 import com.example.lichengnan.constant.Const
-import com.example.lichengnan.event.RefreshEvent
-import com.example.lichengnan.event.SwitchPagesEvent
 import com.example.lichengnan.extension.*
-import com.example.lichengnan.ui.activity.NewDetailActivity
 import com.example.lichengnan.ui.activity.UgcDetailActivity
 import com.example.lichengnan.ui.activity.adapter.DailyAdapter
 import com.example.lichengnan.util.ActionUrlUtil
 import com.eyepetizer.android.logic.model.CommunityRecommend
-import com.example.lichengnan.ui.activity.login.LoginActivity
 import com.example.lichengnan.ui.distory.CommuniteFragment
-import com.example.lichengnan.ui.distory.home.HomeFrgment
 import com.example.lichengnan.ui.horder.*
 import com.example.lichengnan.util.logW
-import com.shuyu.gsyvideoplayer.GSYVideoManager
-import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack
-import com.shuyu.gsyvideoplayer.video.base.GSYVideoPlayer
 import com.zhpan.bannerview.BannerViewPager
 import com.zhpan.bannerview.BaseBannerAdapter
 import com.zhpan.bannerview.BaseViewHolder
 import de.hdodenhof.circleimageview.CircleImageView
-import jp.wasabeef.glide.transformations.RoundedCornersTransformation
-import org.greenrobot.eventbus.EventBus
 
 class CommuniteAdapter(val fragment: CommuniteFragment, var dataList: List<CommunityRecommend.Item>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount() = dataList.size

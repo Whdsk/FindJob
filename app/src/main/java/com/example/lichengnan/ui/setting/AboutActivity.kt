@@ -28,6 +28,7 @@ import com.example.lichengnan.WebViewActivity
 import com.example.lichengnan.WebViewActivity.Companion.DEFAULT_TITLE
 import com.example.lichengnan.WebViewActivity.Companion.DEFAULT_URL
 import com.example.lichengnan.constant.Const
+import com.example.lichengnan.ui.setting.OpenSourceProjectsActivity
 import com.umeng.analytics.MobclickAgent
 import kotlinx.android.synthetic.main.activity_about.*
 import kotlinx.android.synthetic.main.item_community_auto_play_follow_card_follow_card_type.*

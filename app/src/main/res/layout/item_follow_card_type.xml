@@ -80,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="@id/ivAvatar"
         app:layout_constraintEnd_toEndOf="@id/ivAvatar" />
 
-    <com.eyepetizer.android.ui.common.view.TypefaceTextView
+    <com.example.lichengnan.TypefaceTextView
         android:id="@+id/tvDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
         app:typeface="fzlLTypeface"
         tools:text="开眼广告精选 / #广告" />
 
-    <com.eyepetizer.android.ui.common.view.TypefaceTextView
+    <com.example.lichengnan.TypefaceTextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

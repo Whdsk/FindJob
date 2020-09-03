@@ -30,7 +30,7 @@ import org.greenrobot.eventbus.EventBus
         add(TabEntity(GlobalUtil.getString(R.string.daily)))
     }
 
-    override val createFragments: Array<Fragment> = arrayOf(DiscoveryFragment.newInstance(), CommuniteFragment.newInstance(), DailyFragment.newInstance())
+    override val createFragments: Array<Fragment> = arrayOf(DiscoveryFragment.newInstance(), HomeFragment.newInstance(), DailyFragment.newInstance())
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return super.onCreateView(inflater.inflate(R.layout.fragment_main_container, container, false))
@@ -47,7 +47,7 @@ import org.greenrobot.eventbus.EventBus
         if (messageEvent is RefreshEvent && this::class.java == messageEvent.activityClass) {
             when (viewPager?.currentItem) {
                 0 -> EventBus.getDefault().post(RefreshEvent(DiscoveryFragment::class.java))
-                1 -> EventBus.getDefault().post(RefreshEvent(CommuniteFragment::class.java))
+                1 -> EventBus.getDefault().post(RefreshEvent(HomeFragment::class.java))
                 2 -> EventBus.getDefault().post(RefreshEvent(DailyFragment::class.java))
                 else -> {
                 }
@@ -55,7 +55,7 @@ import org.greenrobot.eventbus.EventBus
         } else if (messageEvent is SwitchPagesEvent) {
             when (messageEvent.activityClass) {
                 DiscoveryFragment::class.java -> viewPager?.currentItem = 0
-                CommuniteFragment::class.java -> viewPager?.currentItem = 1
+                HomeFragment::class.java -> viewPager?.currentItem = 1
                 DailyFragment::class.java -> viewPager?.currentItem = 2
                 else -> {
                 }

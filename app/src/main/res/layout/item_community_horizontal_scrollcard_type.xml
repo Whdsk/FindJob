@@ -5,6 +5,5 @@
     android:layout_width="match_parent"
     android:layout_height="207dp"
     tools:background="@color/blue"
-    tools:context=".ui.community.commend.CommendFragment"
     tools:listitem="@layout/item_banner_item_type" />
 

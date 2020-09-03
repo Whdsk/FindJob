@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.eyepetizer.android.ui.setting
+package com.example.lichengnan.ui.setting
 
 import android.content.Context
 import android.content.Intent
@@ -22,11 +22,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
-import com.eyepetizer.android.R
-import com.eyepetizer.android.databinding.ActivitySettingBinding
-import com.eyepetizer.android.ui.common.ui.BaseActivity
-import com.eyepetizer.android.util.GlobalUtil
-import kotlinx.android.synthetic.main.layout_title_bar.*
+import com.example.lichengnan.BaseActivity
+import com.example.lichengnan.GlobalUtil
+import com.example.lichengnan.R
+import com.example.lichengnan.databinding.ActivitySettingBinding
+import kotlinx.android.synthetic.main.item_column_card_list_type.*
 
 /**
  * 设置界面

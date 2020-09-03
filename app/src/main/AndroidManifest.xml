@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Eyepetizer">
         <activity
             android:name=".ui.activity.SplashActivity"
             android:theme="@style/Eyepetizer.SplashActivity">
@@ -37,11 +37,16 @@
             android:name="notch.config"
             android:value="portrait|landscape" />
 
-
-
         <activity android:name=".WebViewActivity" />
+
         <activity android:name=".ui.activity.KaiyuanActivity" />
+
         <activity android:name="com.eyepetizer.android.ui.setting.AboutActivity" />
+
+        <activity android:name=".ui.activity.UgcDetailActivity" />
+        <activity android:name=".ui.activity.login.LoginActivity" />
+        <activity android:name=".ui.activity.NewDetailActivity" />
+
     </application>
 
 </manifest>

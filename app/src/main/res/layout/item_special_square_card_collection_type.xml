@@ -17,7 +17,7 @@
         app:typeface="fzdb1Typeface"
         tools:text="热门分类" />
 
-    <com.eyepetizer.android.ui.common.view.TypefaceTextView
+    <com.example.lichengnan.TypefaceTextView
         android:id="@+id/tvRightText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
         android:layout_alignParentEnd="true"
         android:src="@drawable/ic_into_blue_24dp" />
 
-    <com.eyepetizer.android.ui.common.view.HorizontalRecyclerView
+    <com.example.lichengnan.network.view.HorizontalRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/ic_launcher_background" />
 
-    <com.eyepetizer.android.ui.common.view.TypefaceTextView
+    <com.example.lichengnan.TypefaceTextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         app:typeface="fzdb1Typeface"
         tools:text="如果发挥你的专业去摆摊，你会去摆什么样的地摊？" />
 
-    <com.eyepetizer.android.ui.common.view.TypefaceTextView
+    <com.example.lichengnan.TypefaceTextView
         android:id="@+id/tvDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

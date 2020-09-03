@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.eyepetizer.android.ui.setting
+package com.example.lichengnan.ui.setting
 
 import android.app.Activity
 import android.content.Context
@@ -26,15 +26,15 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.eyepetizer.android.R
-import com.eyepetizer.android.extension.dp2px
-import com.eyepetizer.android.extension.inflate
-import com.eyepetizer.android.ui.common.ui.BaseActivity
-import com.eyepetizer.android.ui.common.ui.WebViewActivity
-import com.eyepetizer.android.ui.common.view.SimpleDividerDecoration
-import com.eyepetizer.android.util.GlobalUtil
+import com.example.lichengnan.BaseActivity
+import com.example.lichengnan.GlobalUtil
+import com.example.lichengnan.R
+import com.example.lichengnan.WebViewActivity
+import com.example.lichengnan.extension.dp2px
+import com.example.lichengnan.extension.inflate
+import com.example.lichengnan.network.view.SimpleDividerDecoration
 import kotlinx.android.synthetic.main.activity_open_source_projects.*
-import kotlinx.android.synthetic.main.layout_title_bar.*
+import kotlinx.android.synthetic.main.item_auto_play_video_ad.*
 
 /**
  * 开源项目列表界面。

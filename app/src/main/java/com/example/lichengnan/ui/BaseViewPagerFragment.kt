@@ -35,7 +35,10 @@ abstract class BaseViewPagerFragment : BaseFragment() {
 
     protected var pageChangeCallback: PageChangeCallback? = null
 
-    protected val adapter: VpAdapter by lazy { VpAdapter(getActivity()!!).apply { addFragments(createFragments) } }
+    protected val adapter: VpAdapter by lazy { VpAdapter(getActivity()!!).apply {
+        addFragments(createFragments)
+    }
+    }
 
     protected var offscreenPageLimit = 1
 
