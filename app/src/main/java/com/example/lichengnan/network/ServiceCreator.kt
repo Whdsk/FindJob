@@ -42,11 +42,14 @@ import kotlin.jvm.Throws
 object ServiceCreator {
 
     const val BASE_URL = "http://baobab.kaiyanapp.com/"
+    //var httpLoggingInterceptor: HttpLoggingInterceptor = HttpLoggingInterceptor()
+
 
     val httpClient = OkHttpClient.Builder()
         .addInterceptor(LoggingInterceptor())
         .addInterceptor(HeaderInterceptor())
         .addInterceptor(BasicParamsInterceptor())
+       // .addNetworkInterceptor(httpLoggingInterceptor)
         .build()
 
     private val builder = Retrofit.Builder()
@@ -65,12 +68,12 @@ object ServiceCreator {
         override fun intercept(chain: Interceptor.Chain): Response {
             val request = chain.request()
             val t1 = System.nanoTime()
-            logV(TAG, "Sending request: ${request.url()} \n ${request.headers()}")
+            logV(TAG, "Sending request: ${request.url} \n ${request.headers}")
 
             val response = chain.proceed(request)
 
             val t2 = System.nanoTime()
-            logV(TAG, "Received response for  ${response.request().url()} in ${(t2 - t1) / 1e6} ms\n${response.headers()}")
+            logV(TAG, "Received response for  ${response.request.url} in ${(t2 - t1) / 1e6} ms\n${response.headers}")
             return response
         }
 
@@ -78,6 +81,7 @@ object ServiceCreator {
             const val TAG = "LoggingInterceptor"
         }
     }
+
 
     class HeaderInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
@@ -94,7 +98,7 @@ object ServiceCreator {
     class BasicParamsInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
             val originalRequest = chain.request()
-            val originalHttpUrl = originalRequest.url()
+            val originalHttpUrl = originalRequest.url
             val url = originalHttpUrl.newBuilder().apply {
                 addQueryParameter("udid", GlobalUtil.getDeviceSerial())
                 addQueryParameter("vc", GlobalUtil.eyepetizerVersionCode.toString())
@@ -105,7 +109,7 @@ object ServiceCreator {
                 addQueryParameter("last_channel", GlobalUtil.deviceBrand)
                 addQueryParameter("system_version_code", "${Build.VERSION.SDK_INT}")
             }.build()
-            val request = originalRequest.newBuilder().url(url).method(originalRequest.method(), originalRequest.body()).build()
+            val request = originalRequest.newBuilder().url(url).method(originalRequest.method, originalRequest.body).build()
             return chain.proceed(request)
         }
     }

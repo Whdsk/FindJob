@@ -19,10 +19,14 @@ package com.example.lichengnan.ui.activity
 import android.app.Activity
 import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import androidx.core.content.FileProvider
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,7 +34,11 @@ import androidx.recyclerview.widget.MergeAdapter
 import com.example.lichengnan.BaseActivity
 import com.example.lichengnan.GlobalUtil
 import com.example.lichengnan.R
+import com.example.lichengnan.download.AppFileHelper
+import com.example.lichengnan.download.DownLoadManager
+import com.example.lichengnan.download.ProgressCallBack
 import com.example.lichengnan.extension.*
+import com.example.lichengnan.network.ServiceCreator
 import com.example.lichengnan.ui.activity.adapter.NewDetailRelatedAdapter
 import com.example.lichengnan.ui.activity.adapter.NewDetailReplyAdapter
 import com.example.lichengnan.ui.activity.login.LoginActivity
@@ -48,8 +56,8 @@ import com.shuyu.gsyvideoplayer.video.base.GSYVideoPlayer
 import com.shuyu.gsyvideoplayer.video.base.GSYVideoView
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.activity_new_detail.*
-import kotlinx.android.synthetic.main.item_list.view.*
 import kotlinx.coroutines.*
+import java.io.File
 
 
 /**
@@ -75,6 +83,9 @@ class NewDetailActivity : BaseActivity() {
     private var hideTitleBarJob: Job? = null
 
     private var hideBottomContainerJob: Job? = null
+
+    lateinit var playUrl111:String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -162,7 +173,7 @@ class NewDetailActivity : BaseActivity() {
             setOnLoadMoreListener { viewModel.onLoadMore() }
         }
         setOnClickListener(
-            ivPullDown, ivMore, ivShare, ivCollection, ivToWechatFriends, ivShareToWechatMemories,
+            ivPullDown, ivMore, ivShare, ivCollection,ivDownload, ivToWechatFriends, ivShareToWechatMemories,
             ivShareToWeibo, ivShareToQQ, ivShareToQQzone, ivAvatar, etComment, ivReply, tvReplyCount, listener = ClickListener()
         )
         observe()
@@ -206,6 +217,7 @@ class NewDetailActivity : BaseActivity() {
                 }
                 response.videoBeanForClient?.run {
                     viewModel.videoInfoData = VideoInfo(id, playUrl, title, description, category, library, consumption, cover, author, webUrl)
+                    playUrl111=playUrl
                     startVideoPlayer()
                     relatedAdapter.bindVideoInfo(viewModel.videoInfoData)
                 }
@@ -298,6 +310,7 @@ class NewDetailActivity : BaseActivity() {
             setVideoAllCallBack(VideoCallPlayBack())
             //设置播放URL
             setUp(it.playUrl, false, it.title)
+            playUrl111=it.playUrl
             //开始播放
             startPlayLogic()
         }
@@ -397,6 +410,10 @@ class NewDetailActivity : BaseActivity() {
                     ivPullDown -> finish()
                     ivMore -> {
                     }
+                    ivDownload ->{
+                        var string:String=System.currentTimeMillis().toString()
+                        downLoad(System.currentTimeMillis().toString().plus(".mp4"))
+                    }
                     ivShare -> showDialogShare(it.webUrl.raw)
                     ivCollection -> LoginActivity.start(this@NewDetailActivity)
                     ivToWechatFriends -> share(it.webUrl.raw, SHARE_WECHAT)
@@ -411,6 +428,23 @@ class NewDetailActivity : BaseActivity() {
                 }
             }
         }
+    }
+
+    private fun downLoad(fileName:String ) {
+        Log.e("dddddrree",playUrl111)
+        Uri.parse(playUrl111).path?.let { Log.e("dddddrree", it) }
+        val manager: DownLoadManager = DownLoadManager.getInstance(ServiceCreator.BASE_URL)
+        //AppFileHelper.initStoragePath(LiveCoursesActivity.this);
+        DownLoadManager.getInstance(ServiceCreator.BASE_URL).load(playUrl111, object:ProgressCallBack(fileName) {
+            fun onSuccess() {
+            }
+            fun progress(progress: Long, total: Long) {
+               // showLoading()
+            }
+            fun onError(e: Throwable) {
+                //LogUtil.e("LiveCoursesActivity", "onError ==> e" + e.localizedMessage)
+            }
+        })
     }
 
     @Parcelize

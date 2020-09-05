@@ -46,6 +46,7 @@
         <activity android:name=".ui.activity.UgcDetailActivity" />
         <activity android:name=".ui.activity.login.LoginActivity" />
         <activity android:name=".ui.activity.NewDetailActivity" />
+        <activity android:name=".ui.activity.PdfReaderActivity" />
 
     </application>
 

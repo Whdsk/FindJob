@@ -22,6 +22,11 @@ class IndexActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recycleView)
         listDto=ArrayList()
         for (index in 1..10){
+            if(index==0){
+                listDto.add(ItemListDto("开源视频"))
+            }else if(index==1){
+                listDto.add(ItemListDto("开源视频"))
+            }
             listDto.add(ItemListDto("视频"))
         }
         recyclerView.adapter=listAdapter
@@ -32,6 +37,8 @@ class IndexActivity : AppCompatActivity() {
             Toast.makeText(this@IndexActivity,"dddd",Toast.LENGTH_LONG).show()
             if(position==0){
                 KaiyuanActivity.start(this@IndexActivity)
+            }else if(position==1){
+                PdfReaderActivity.start(this@IndexActivity)
             }
         }
     }
