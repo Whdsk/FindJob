@@ -152,6 +152,15 @@
             android:padding="11dp"
             android:src="@drawable/ic_favorite_border_white_20dp" />
 
+        <ImageView
+            android:id="@+id/ivDownload"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_toStartOf="@id/ivCollection"
+            android:padding="11dp"
+            android:src="@mipmap/icon_paper_download" />
+
     </RelativeLayout>
 
     <LinearLayout
