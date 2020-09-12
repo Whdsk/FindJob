@@ -11,6 +11,7 @@ class ListAdapter:BaseQuickAdapter<ItemListDto, BaseViewHolder>(R.layout.item_li
     override fun convert(holder: BaseViewHolder, item: ItemListDto) {
         //val cardView: CardView =holder.getView(R.id.cardView)
         val text:TextView=holder.getView(R.id.text)
+
         text.text=item.bookName
     }
 }

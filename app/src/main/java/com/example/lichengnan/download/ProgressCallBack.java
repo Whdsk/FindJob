@@ -11,11 +11,11 @@ import io.reactivex.disposables.Disposable;
 import okhttp3.ResponseBody;
 
 /**
- * @param <T>
+ *
  * @author fengli
  * @date 2019/11/29
  */
-public abstract class ProgressCallBack<T> {
+public abstract class ProgressCallBack {
 
     /**
      * 本地文件存放路径-系统根目录

@@ -26,6 +26,7 @@ import android.os.Parcelable
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -431,21 +432,37 @@ class NewDetailActivity : BaseActivity() {
     }
 
     private fun downLoad(fileName:String ) {
+        Toast.makeText(this@NewDetailActivity,"开始下载",Toast.LENGTH_LONG).show()
         Log.e("dddddrree",playUrl111)
         Uri.parse(playUrl111).path?.let { Log.e("dddddrree", it) }
         val manager: DownLoadManager = DownLoadManager.getInstance(ServiceCreator.BASE_URL)
         //AppFileHelper.initStoragePath(LiveCoursesActivity.this);
         DownLoadManager.getInstance(ServiceCreator.BASE_URL).load(playUrl111, object:ProgressCallBack(fileName) {
-            fun onSuccess() {
+            override fun onSuccess() {
+                Toast.makeText(this@NewDetailActivity,"下载成功",Toast.LENGTH_LONG).show()
+                Log.e("dddddrree",fileName)
             }
-            fun progress(progress: Long, total: Long) {
-               // showLoading()
+
+            override fun progress(progress: Long, total: Long) {
+
             }
-            fun onError(e: Throwable) {
-                //LogUtil.e("LiveCoursesActivity", "onError ==> e" + e.localizedMessage)
+
+            override fun onError(e: Throwable?) {
+                e?.message?.let { Log.e("dddddrree", it) }
             }
+//            fun onSuccess() {
+//            }
+//            fun progress(progress: Long, total: Long) {
+//               // showLoading()
+//            }
+//            fun onError(e: Throwable) {
+//                //LogUtil.e("LiveCoursesActivity", "onError ==> e" + e.localizedMessage)
+//            }
         })
     }
+//    class progressCallBack(fileName: String):ProgressCallBack{
+//
+//    }
 
     @Parcelize
     data class VideoInfo(

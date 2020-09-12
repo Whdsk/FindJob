@@ -39,6 +39,8 @@ class IndexActivity : AppCompatActivity() {
                 KaiyuanActivity.start(this@IndexActivity)
             }else if(position==1){
                 PdfReaderActivity.start(this@IndexActivity)
+            }else if(position==2){
+                LinearLayoutGroupActivity.start(this@IndexActivity)
             }
         }
     }

@@ -32,4 +32,5 @@
     <color name="gray">#ededed</color>
     <color name="grayDark">#adadad</color>
     <color name="loading">#cdcdcd</color>
+    <color name="colorYellow">#FFFF33</color>
 </resources>

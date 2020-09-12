@@ -146,5 +146,7 @@
     <string name="encourage">鼓励一下</string>
     <string name="not_encourage">我就不给</string>
     <string name="encourage_message">如果你喜欢 %1$s 的设计，感觉本项目的源代码对你的学习有所帮助，可以给个 \"Star\" 支持一下，谢谢！^_^</string>
-
+    <string name="skid_activty_2_text">Do one thing at a time, and do well.Keep on going never give up.
+        Whatever is worth doing is worth doing well.I can because i think i can.Jack of all trades and master of none.
+    Whatever is worth doing is worth doing well.Keep on going never give up.</string>
 </resources>

@@ -1,2 +1,4 @@
+//include ':LayoutManagerGroup-master'
+//include ':LayoutManagerGroup'
 include ':app'
 rootProject.name = "LiChengNan"

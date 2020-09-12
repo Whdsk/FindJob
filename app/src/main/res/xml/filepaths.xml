@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+  <!--  <external-path name="rc_external_path" path="."/>-->
+    <!--<external-path path="image/" name="image" />-->
+  <external-path name="image"  path="." />
+  <external-path
+      name="my_images"
+      path="pictures"/>
+  <external-path
+      name="data"
+      path="data/"/>
+  <external-path
+      name="cache"
+      path="cache/"/>
+  <external-path
+      name="picture"
+      path="pic/"/>
+  <external-path
+      name="camera"
+      path="camera/"/>
+  <external-path
+      name="log"
+      path="log/"/>
+  <external-path
+      name="temp"
+      path="temp/"/>
+  <external-path
+      name="download"
+      path="download/"/>
+
+  <!--<files-path name="media"/>-->
+</paths>

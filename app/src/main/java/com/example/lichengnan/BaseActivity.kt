@@ -42,7 +42,8 @@ import java.lang.ref.WeakReference
  * @since  2020/4/29
  */
 @SuppressLint("Registered")
-open class BaseActivity : AppCompatActivity() {
+open class
+BaseActivity : AppCompatActivity() {
 
     /**
      * 判断当前Activity是否在前台。
