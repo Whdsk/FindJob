@@ -39,6 +39,7 @@ import com.shuyu.gsyvideoplayer.video.base.GSYBaseVideoPlayer
  */
 class AutoPlayScrollListener(private val itemPlayId: Int, private val rangeTop: Int, private val rangeBottom: Int) : RecyclerView.OnScrollListener() {
 
+
     private var isNeedShowWifiDialog = true
 
     private var firstVisible = 0
